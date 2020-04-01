@@ -1,0 +1,16 @@
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\BlogSystem.DAL.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\BlogSystem.DAL.pdb
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\BlogSystem.Models.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\EntityFramework.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\IDAL.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\BlogSystem.Models.pdb
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\BlogSystem.Models.dll.config
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\IDAL.pdb
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\EntityFramework.xml
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.csprojAssemblyReference.cache
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.csproj.CopyComplete
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.pdb

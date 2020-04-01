@@ -1,0 +1,5 @@
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\BlogSystem.Dto.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\BlogSystem.Dto.pdb
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.csprojAssemblyReference.cache
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.pdb

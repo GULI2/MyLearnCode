@@ -1,0 +1,12 @@
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\IDAL.dll
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\IDAL.pdb
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\BlogSystem.Models.dll
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\EntityFramework.dll
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\BlogSystem.Models.pdb
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\BlogSystem.Models.dll.config
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\EntityFramework.xml
+D:\visualstudio source\repos\BlogSystem\IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\BlogSystem.IDAL.csprojAssemblyReference.cache
+D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\BlogSystem.IDAL.csproj.CopyComplete
+D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\IDAL.dll
+D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\IDAL.pdb

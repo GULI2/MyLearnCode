@@ -1,0 +1,97 @@
+﻿@model IEnumerable<BlogSystem.Dto.ArticleDto>
+
+@{
+    ViewBag.Title = "ArticleList";
+}
+
+<h2>ArticleList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateArticle")
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BadCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryNames)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GoodCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BadCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryNames)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "ArticleDetail", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr colspan="6">
+            <td>
+                <ul class="pagerList">
+                    @if (ViewBag.totalPageCount <= 7)
+                    {
+                        //总页码数小于等于页面显示的页码数
+                        for (int i = 0; i < ViewBag.totalPageCount; i++)
+                        {
+                            <li>
+                                <a href="/Article/ArticleList?pageIndex=@i">@(i + 1)</a>
+                            </li>
+                        }
+                    }
+                    else if(ViewBag.pageIndex<=7/2+1)
+                    {
+                        //总页码数大于页面显示的页码数
+
+                    }
+
+                </ul>
+            </td>
+        </tr>
+    </tfoot>
+
+</table>

@@ -1,0 +1,16 @@
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\IBLL.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\IBLL.pdb
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\BlogSystem.Dto.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\IDAL.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\BlogSystem.Models.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\EntityFramework.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\BlogSystem.Dto.pdb
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\IDAL.pdb
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\BlogSystem.Models.pdb
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\BlogSystem.Models.dll.config
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\EntityFramework.xml
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\BlogSystem.IBLL.csprojAssemblyReference.cache
+D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\BlogSystem.IBLL.csproj.CopyComplete
+D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\IBLL.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\IBLL.pdb
