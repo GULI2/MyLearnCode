@@ -9,6 +9,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Webdiyer.WebControls.Mvc;
 
 namespace BlogSystemBLL
 {
@@ -56,15 +57,32 @@ namespace BlogSystemBLL
 
         public async Task EditArticle(Guid ArticleId, string newTitle, string newContent, Guid[] categoryIds)
         {
-            using (var articleSev = new ArticleService())
+            using (IArticleService articleSev = new ArticleService())
             {
                 Article article = await articleSev.GetOneByIdAsync(ArticleId);
                 article.Title = newTitle;
                 article.Contents = newContent;
                 await articleSev.EditAsync(article);
-                using (var articleCategorySev = new BlogCategoryService())
+                using (IArticleToCategoryService articleToCategorySev = new ArticleToCategoryService())
                 {
-
+                    //先删
+                    var categoryIdsByArticleId = articleToCategorySev.GetAllAsync()
+                        .Where(u => u.BlogArticleId == ArticleId);
+                    foreach (var each in categoryIdsByArticleId)
+                    {
+                        await articleToCategorySev.RemoveAsync(each, false);
+                    }
+                   
+                    //后增
+                    foreach (var each in categoryIds)
+                    {
+                        await articleToCategorySev.CreateAsync(new ArticleToCategory()
+                        {
+                            BlogCategoryId = each,
+                            BlogArticleId = ArticleId
+                        },false);
+                    }
+                    await articleToCategorySev.Save();//避免循环保存
                 }
             }
         }
@@ -93,12 +111,13 @@ namespace BlogSystemBLL
 
 
 
-        public async Task<List<ArticleDto>> GetAllArticlesByUserId(Guid userId, int pageIndex, int pageSize)
+        public async Task<PagedList<ArticleDto>> GetAllArticlesByUserId(Guid userId, int pageIndex, int pageSize)
         {
             using (IArticleService articleSev = new ArticleService())
             {
-                var articleList = await articleSev.GetByPageOrderAsync(pageSize, pageIndex, false).Include(u => u.User)
-                    .Where(u => u.UserId == userId).Select(u => new ArticleDto()
+                var articleList = await articleSev.GetByOrderAsync(false).Include(u => u.User)
+                    .Where(u => u.UserId == userId)
+                    .Select(u => new ArticleDto()
                     {
                         Title = u.Title,
                         Content = u.Contents,
@@ -120,7 +139,7 @@ namespace BlogSystemBLL
                         eachArticle.CategoryIds = categoryList.Select(u => u.BlogCategoryId).ToArray();
                         eachArticle.CategoryNames = categoryList.Select(u => u.BlogCategory.Category).ToArray();
                     }
-                    return articleList;
+                    return articleList.ToPagedList(pageIndex, pageSize);
                 }
             }
         }
@@ -186,7 +205,57 @@ namespace BlogSystemBLL
         {
             using (IArticleService articleSev = new ArticleService())
             {
-                return await articleSev.GetAllAsync().CountAsync(u=>u.UserId== userId);
+                return await articleSev.GetAllAsync().CountAsync(u => u.UserId == userId);
+            }
+        }
+
+        public async Task  GoodCountAdd(Guid articleId)
+        {
+            using (IArticleService articleSev = new ArticleService())
+            {
+                var article =await articleSev.GetOneByIdAsync(articleId);
+                article.GoodCount++;
+                await articleSev.EditAsync(article);
+            }
+        }
+
+        public async Task BadCountAdd(Guid articleId)
+        {
+            using (IArticleService articleSev = new ArticleService())
+            {
+                var article = await articleSev.GetOneByIdAsync(articleId);
+                article.BadCount++;
+                await articleSev.EditAsync(article);
+            }
+        }
+
+        public async Task CreateComment(Guid ArticleId, Guid UserId, string Comment)
+        {
+            using (ICommentService commentSev = new CommentService())
+            {
+                var comment = new Comment()
+                {
+                    UserId = UserId,
+                    ArticleId = ArticleId,
+                    CommentContent = Comment
+                };
+               await commentSev.CreateAsync(comment);
+            }
+        }
+
+        public async Task<List<CommentDto>> GetCommentByArticleId(Guid ArticleId)
+        {
+            using (ICommentService commentSev = new CommentService())
+            {
+                return await commentSev.GetByOrderAsync(false).Where(u => u.ArticleId == ArticleId)
+                    .Include(u=>u.User)
+                    .Select(u=>new CommentDto() {
+                        ArticleId=u.ArticleId,
+                        Comment=u.CommentContent,
+                        UserId = u.UserId,
+                        Email=u.User.Email,
+                        CreateTime=u.CreateTime
+                    }).ToListAsync();
             }
         }
     }

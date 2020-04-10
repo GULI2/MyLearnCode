@@ -12,3 +12,5 @@ D:\visualstudio source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.M
 D:\visualstudio source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.pdb
 D:\visualstudio source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.Migrations.createBlog.resources
 D:\visualstudio source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csproj.GenerateResource.cache
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Models\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csproj.CoreCompileInputs.cache

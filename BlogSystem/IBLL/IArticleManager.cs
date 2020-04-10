@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Webdiyer.WebControls.Mvc;
 
 namespace IBLL
 {
@@ -14,7 +15,7 @@ namespace IBLL
         //根据用户查找文章类别
         Task<List<BlogCategoryDto>> GetAllCategoriesByUser(Guid userId);
         //根据用户查找文章
-        Task<List<ArticleDto>> GetAllArticlesByUserId(Guid userId,int pageIndex,int pageSize);
+        Task<PagedList<ArticleDto>> GetAllArticlesByUserId(Guid userId, int pageIndex, int pageSize);
         Task<List<ArticleDto>> GetAllArticlesByUserEmail(string email);
         //获取文章总数--用于分页中计算总页码数
         Task<int> GetTotalArticleCount(Guid userId);
@@ -29,5 +30,11 @@ namespace IBLL
 
         Task<bool> ExistArticle(Guid ArticleId);
         Task<ArticleDto> GetArticleById(Guid ArticleId);
+
+        Task GoodCountAdd(Guid ArticleId);
+        Task BadCountAdd(Guid ArticleId);
+
+        Task CreateComment(Guid ArticleId,Guid UserId,string Comment);
+       Task<List<CommentDto>> GetCommentByArticleId(Guid ArticleId);
     }
 }

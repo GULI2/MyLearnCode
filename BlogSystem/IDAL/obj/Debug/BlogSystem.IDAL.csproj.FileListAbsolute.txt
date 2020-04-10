@@ -10,3 +10,4 @@ D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\BlogSystem.IDAL.csprojAss
 D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\BlogSystem.IDAL.csproj.CopyComplete
 D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\IDAL.dll
 D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\IDAL.pdb
+D:\visualstudio source\repos\BlogSystem\IDAL\obj\Debug\BlogSystem.IDAL.csproj.CoreCompileInputs.cache

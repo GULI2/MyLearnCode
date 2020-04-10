@@ -46,7 +46,8 @@ namespace BlogSystem.MVCSite.Controllers
             {
                 IUserManager userManager = new UserManager();
                 await userManager.Register(model.Email, model.PassWord);
-                return Content("注册成功");
+                //return Content("注册成功");
+                return RedirectToAction("Login");
             }
             return View(model);
         }

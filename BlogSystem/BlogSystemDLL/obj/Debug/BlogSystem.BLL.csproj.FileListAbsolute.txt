@@ -20,3 +20,9 @@ D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\obj\Debug\BlogSystem.BLL.c
 D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\obj\Debug\BlogSystem.BLL.csproj.CopyComplete
 D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\obj\Debug\BlogSystemDLL.dll
 D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\obj\Debug\BlogSystemDLL.pdb
+D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\obj\Debug\BlogSystem.BLL.csproj.CoreCompileInputs.cache
+D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\bin\Debug\Webdiyer.MvcPager.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\bin\Debug\Webdiyer.MvcPager.xml
+D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\bin\Debug\zh-CHS\Webdiyer.MvcPager.resources.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystemDLL\bin\Debug\zh-CHT\Webdiyer.MvcPager.resources.dll

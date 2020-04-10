@@ -14,3 +14,5 @@ D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.
 D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.csproj.CopyComplete
 D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.dll
 D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.pdb
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\visualstudio source\repos\BlogSystem\BlogSystem.DAL\obj\Debug\BlogSystem.DAL.csproj.CoreCompileInputs.cache

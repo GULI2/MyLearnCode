@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Content)
+            @Html.Raw(Model.Content)@*Raw表示不转码*@
         </dd>
 
         <dt>
@@ -68,10 +68,61 @@
             <dd>
                 @each
             </dd>
-        }   
+        }
     </dl>
 </div>
+<button onclick="btnGoodHandler(this)">赞成</button>
+<button onclick="btnBadHandler(this)">反对</button>
+<input type="text" id="comment" name="comment" />
+<button onclick="btnAddComment(this)">添加评论</button>
+<ul>
+    @foreach (var each in ViewBag.comment)
+    {
+        <li>
+            <span>@each.Comment</span>
+            <br />
+            <span>@each.Email @each.CreateTime</span>
+        </li>
+    }
+</ul>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "ArticleEdit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "ArticleList")
 </p>
+
+@section headers {
+    <script>
+        var articleId = '@Model.Id'
+        function btnGoodHandler(btn) {
+            $.ajax({
+                url: "/Article/GoodCountAdd/"+articleId,
+                type: "post"
+            }).done(() => {
+                alert("点赞成功！");
+                btn.disabled = true;
+            })
+        }
+    function btnBadHandler(btn) {
+        $.ajax({
+            url: "/Article/BadCountAdd/" + articleId,
+            type: "post"
+        }).done(() => {
+            alert("反对成功！");
+            btn.disabled = true;
+        })
+    }
+    function btnAddComment(btn) {
+        $.ajax({
+            url: "/Article/AddComment" ,
+            type: "post",
+             data: {
+                ArticleId: articleId,
+                Comment: document.getElementById("comment").value
+            }
+        }).done(() => {
+            alert("评论成功");
+            location.reload();
+        })
+    }
+    </script>
+}

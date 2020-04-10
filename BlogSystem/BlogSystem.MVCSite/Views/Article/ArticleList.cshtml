@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BlogSystem.Dto.ArticleDto>
+﻿@model  PagedList<BlogSystem.Dto.ArticleDto>
+@using Webdiyer.WebControls.Mvc;
+<link rel="stylesheet" type="text/css" href="/Content/pagerstyles.css" />
 
 @{
     ViewBag.Title = "ArticleList";
@@ -15,9 +17,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
@@ -43,9 +43,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Content)
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
@@ -62,7 +60,7 @@
                     @Html.DisplayFor(modelItem => item.CategoryNames)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Edit", "ArticleEdit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "ArticleDetail", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
@@ -70,28 +68,104 @@
         }
     </tbody>
     <tfoot>
-        <tr colspan="6">
-            <td>
+        <tr>
+            <td colspan="8" class="text-center">
+                <nav>
+                    @Html.Pager(Model, new PagerOptions
+                    {
+                        PageIndexParameterName = "pageIndex",
+                        ContainerTagName = "ul",
+                   CssClass = "pagination",
+                        CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>",
+                   DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>",
+                        PagerItemTemplate = "<li>{0}</li>",
+                   Id = "bootstrappager"
+                    })
+                </nav>
+            </td>
+            
+            @*
+
                 <ul class="pagerList">
-                    @if (ViewBag.totalPageCount <= 7)
+                    @if (ViewBag.totalPageCount <= 7)//显示7页
                     {
                         //总页码数小于等于页面显示的页码数
                         for (int i = 0; i < ViewBag.totalPageCount; i++)
                         {
-                            <li>
-                                <a href="/Article/ArticleList?pageIndex=@i">@(i + 1)</a>
-                            </li>
+                            if (i == ViewBag.pageIndex)
+                            {
+                                <li><a style="color:red" href="#">@(i + 1)</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/Article/ArticleList?pageIndex=@i">@(i + 1)</a>
+                                </li>
+                            }
+
                         }
                     }
-                    else if(ViewBag.pageIndex<=7/2+1)
+                    //总页码数大于页面显示的页码数
+                    else if (ViewBag.pageIndex < 7 / 2 + 1)
                     {
-                        //总页码数大于页面显示的页码数
+                        for (int i = 1; i <= 7; i++)
+                        {
+                            if (i - 1 == ViewBag.pageIndex)
+                            {
+                                <li><a style="color:red" href="#">@i</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/Article/ArticleList?pageIndex=@(i-1)">@(i)</a>
+                                </li>
+                            }
 
+                        }
                     }
+                    else if (ViewBag.pageIndex >= (ViewBag.totalPageCount - 7 / 2 - 1))
+                    {
+                        for (int i = ViewBag.totalPageCount - 6; i <= ViewBag.totalPageCount; i++)
+                        {
+                            if (i - 1 == ViewBag.pageIndex)
+                            {
+                                <li><a style="color:red" href="#">@i</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/Article/ArticleList?pageIndex=@(i-1)">@(i)</a>
+                                </li>
+                            }
 
+                        }
+                    }
+                    else
+                    {
+                        for (int i = ViewBag.pageIndex - 7 / 2 + 1; i <= ViewBag.pageIndex + 7 / 2 + 1; i++)
+                        {
+                            <span>aaa</span>
+                            if (i - 1 == ViewBag.pageIndex)
+                            {
+
+                                <li><a style="color:red" href="#">@i</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/Article/ArticleList?pageIndex=@(i-1)">@(i)</a>
+                                </li>
+                            }
+                        }
+                    }
                 </ul>
-            </td>
+
+            *@
+
+
+
         </tr>
+
     </tfoot>
 
 </table>

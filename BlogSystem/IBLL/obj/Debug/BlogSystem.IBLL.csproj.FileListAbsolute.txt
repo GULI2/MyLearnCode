@@ -14,3 +14,8 @@ D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\BlogSystem.IBLL.csprojAss
 D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\BlogSystem.IBLL.csproj.CopyComplete
 D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\IBLL.dll
 D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\IBLL.pdb
+D:\visualstudio source\repos\BlogSystem\IBLL\obj\Debug\BlogSystem.IBLL.csproj.CoreCompileInputs.cache
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\Webdiyer.MvcPager.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\Webdiyer.MvcPager.xml
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\zh-CHS\Webdiyer.MvcPager.resources.dll
+D:\visualstudio source\repos\BlogSystem\IBLL\bin\Debug\zh-CHT\Webdiyer.MvcPager.resources.dll
